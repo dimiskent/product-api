@@ -46,7 +46,7 @@ public class ProductService {
         return product;
     }
 
-    public ProductResponseDTO updateProduct(Long productId, Long userId, Product product) {
+    public ProductResponseDTO updateProduct(Long productId, Long userId, ProductRequestDTO product) {
         Product current = getOwnedProduct(productId, userId);
 
         current.setName(product.getName());

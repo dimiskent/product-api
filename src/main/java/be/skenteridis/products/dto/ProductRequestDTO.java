@@ -8,7 +8,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 
-@Entity @Table(name = "products")
 public class ProductRequestDTO {
     @NotBlank(message = "Name can't be blank!")
     private String name;

@@ -8,7 +8,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 
-@Entity @Table(name = "products")
 public class ProductResponseDTO {
     private Long id;
     private String name;

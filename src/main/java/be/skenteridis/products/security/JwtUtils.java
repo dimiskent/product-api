@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -15,7 +16,7 @@ import java.util.Map;
 public class JwtUtils {
     private final Key key;
     private final long expiration;
-    public JwtUtils(String key, long expiration) {
+    public JwtUtils(@Value("${app.jwt.secret}") String key, @Value("${app.jwt.expiration}") long expiration) {
         this.expiration = expiration;
         this.key = Keys.hmacShaKeyFor(Decoders.BASE64URL.decode(key));
     }
